@@ -40,6 +40,12 @@ const run = async () => {
             const result = await phoneCollection.deleteOne({ _id: ObjectId(id) })
             res.send({ result });
         })
+        app.put('/product/:id', async (req, res) => {
+            const id = req.params.id;
+            const quantity = req.body.quantity;
+            const result = await phoneCollection.updateOne({ _id: ObjectId(id) }, { $set: { quantity } }, { upsert: true })
+            res.send({ result });
+        })
 
 
 
