@@ -85,7 +85,7 @@ const run = async () => {
 run().catch(console.log)
 
 app.get('/', (req, res) => {
-    res.send('I can code node  wow!')
+    res.send('Server is online...')
 })
 
 app.listen(port, () => {
